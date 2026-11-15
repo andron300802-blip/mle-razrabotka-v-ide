@@ -20,10 +20,21 @@ class DataFrameReporter:
 
         print('Доля дубликатов:', format(duplicates / rows_count, self.percent_format))
 
+        # Описательная статистика по числовым и категориальным столбцам:
+        print(df.describe(include='all' if self.include_all else None))
+
+        # Статистика по количеству пропущенных значений:
+        print('Количество пропусков:', df.isna().sum().sum())
+        print('Доля пропусков:',
+                format(
+                    df.isna().sum().sum() / (rows_count * columns_count),
+                    self.float_format
+                ))
 
 import pandas as pd
 
 data = pd.read_csv('data/payments.csv')
+
 
 reporter_1 = DataFrameReporter(float_format='0.02f', percent_format='0.03%')
 reporter_2 = DataFrameReporter(float_format='0.03f', percent_format='0.01%', include_all=True)
