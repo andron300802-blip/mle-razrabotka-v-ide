@@ -10,25 +10,38 @@ DataFrameReporter - Python-класс для автоматизированно�
 - Настройка формата вывода чисел и процентов.
 
 ## Установка и настройка стреды Python
-1. Клонирование репозитория:
-`cd <Имя проекта на ПК> 
-git clone <URL_репозитория>`
-2. Создание виртуального окружения:
-`python3 m -venv venv`
-3. Активация окружение
-`source venv/bin/activate`
-4. Установите необходимые библиотеки:
-`python -m pip install -r requirements.txt`
+1. Клонирование репозитория: 
+   ```bash
+   git clone <URL_репозитория>
+   cd <Имя_папки_проекта>
+   ```
+2. Создание виртуального окружения: 
+   ```bash
+   python3 -m venv venv
+   ```
+3. Активация окружения:
+
+   ```bash
+   source venv/bin/activate
+   ```
+4. Установите необходимые библиотеки: 
+    ```bash
+    python -m pip install -r requirements.txt
+    ```
 ## Запуск программы
 Из корневой директории проекта выполните:
-`python3 main.py`
+```bash
+python3 main.py
+```
 Программа загрузит датасет data/payments.csv, создаст объект класса DataFrameReporter и выведет отчёт в терминал.
 ## Структура проекта
-`project/
-├── data/
+```bash
+project/  
+├── data/  
 │   └── payments.csv
 ├── src/
 │   └── reporter.py
 ├── main.py
 ├── requirements.txt
 └── README.md`
+```
